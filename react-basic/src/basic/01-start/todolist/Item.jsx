@@ -6,7 +6,7 @@ export default class Item extends Component {
         return (
             <div>
                 <li>{name}
-                <button>删除</button>
+                <button onClick={this.props.del.bind(this,id)}>删除</button>
                 </li>
             </div>
         )

@@ -7,7 +7,7 @@ export default class List extends Component {
                 <ul>
                     {
                         this.props.list.map((item)=>{
-                        return <Item key={item.id} item={item}>{item.name}</Item>
+                        return <Item del={(id)=>{this.props.del(id)}} key={item.id} item={item}>{item.name}</Item>
                         })
                     }
                 </ul>
