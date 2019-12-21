@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import Headerbar from 'components/headerbar/Headerbar'
 import Search from 'components/search/Search'
-import { Carousel } from 'antd-mobile'
+import Swiper from './components/Swiper'
+import HotCate from './components/HotCate'
+import Top10 from './components/Top10'
 import {get} from 'utils/http.js'
 
 export default class Cookbook extends Component {
@@ -15,26 +17,11 @@ export default class Cookbook extends Component {
         return (
             <div>
                 <Headerbar>菜谱大全</Headerbar>
-                <Carousel
-                    autoplay={false}
-                    infinite
-                >
-                    {this.state.data.map(item => (
-                        
-                            <img key={item.id}
-                                src={item.url}
-                                alt=""
-                                style={{ width: '100%', verticalAlign: 'top' }}
-                                onLoad={() => {
-                                    // fire window resize event to change height
-                                    window.dispatchEvent(new Event('resize'));
-                                    this.setState({ imgHeight: 'auto' });
-                                }}
-                            />
-                    ))}
-                </Carousel>
+               <Swiper list = {this.state.data}></Swiper>
                 {/* hasborder,bgcolor,placeholder都是动态传值 */}
-                <Search hasborder={true} bgcolor='#f8f3ffa' placeholder="想吃什么搜这里，如：川菜"></Search>
+                <Search hasborder={true} bgcolor='#f8f3fa' placeholder="想吃什么搜这里，如：川菜"></Search>
+                <HotCate></HotCate>
+                <Top10></Top10>
             </div>
         )
     }

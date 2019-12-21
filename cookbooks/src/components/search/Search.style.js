@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import {Border1px} from '../style/border'
 import search from 'assets/images/search.png'
 // import search from '../../assets/images/search.png'
 const SearchContainer = styled.div`
@@ -28,9 +29,7 @@ input{
     border:none;
 }
 `
-const borderContainer = styled(InputContainer)
-`
-border:1px solid #b28969;
-border-radius:0.1rem;
-`
+const borderContainer = Border1px({
+    Comp:InputContainer
+})
 export {borderContainer,SearchContainer,InputContainer}
