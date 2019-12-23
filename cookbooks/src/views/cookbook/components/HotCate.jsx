@@ -6,7 +6,9 @@ export default class HotCate extends Component {
         return (
             <HotCateContainer>
                 <h2>热门分类</h2>
-                <Grid></Grid>
+                <Grid list={this.props.list}>
+                    
+                </Grid>
             </HotCateContainer>
         )
     }

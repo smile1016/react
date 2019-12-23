@@ -1,5 +1,46 @@
 import styled from 'styled-components'
-const Top10Container = styled.div`
-
+const Top10Container = styled.div `
+background:#F5F5F7;
+h2{
+    line-height:0.94rem;
+    font-size:0.3rem;
+    font-weight:400;
+    color:#909090;
+    padding-left:0.23rem;
+}
+    ul{
+    display:flex;
+    width:100%;
+    flex-wrap:wrap;
+    padding-left:0.08rem;
+    padding-right:0.08rem;
+    li{
+        display:flex;
+        flex-direction:column;
+        padding:0.08rem;
+        width:${({column})=>100/column}%;
+        justify-content:center;
+        align-items:center;
+        background:#f5f5f5;
+        .wrapper{
+            background:#fff;
+        }
+        img{
+            width:100%;
+        }
+        h3{
+            font-size:0.4rem;
+            font-weight:300;
+            color:#090909;
+        }
+        .desc{
+            display:block;
+            text-align:center;
+            line-height:0.35rem;
+            color:#999;
+            font-size:0.2rem;
+        }
+    }
+    }
 `
 export default Top10Container

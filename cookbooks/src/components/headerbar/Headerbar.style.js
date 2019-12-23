@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 const HearderBarContainer = styled.div`
 background:#ee7530;
-line-height:0.90rem;
+height:0.90rem;
+line-height:0.9rem;
 text-align:center;
 font-size:0.38rem;
 color:#fff7fc;

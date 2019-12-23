@@ -3,6 +3,7 @@ import {borderContainer,InputContainer,SearchContainer} from './Search.style'
 export default class Search extends Component {
     render() {
         let InputWrapper = this.props.hasborder?borderContainer:InputContainer;
+        // console.log(this.props.hasborder)
         //动态组件
         return (
             <SearchContainer {...this.props}>
@@ -13,4 +14,5 @@ export default class Search extends Component {
             </SearchContainer>
         )
     }
+    
 }

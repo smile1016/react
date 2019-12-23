@@ -4,7 +4,7 @@ import 'assets/style/reset.css'
 import 'antd-mobile/dist/antd-mobile.css';
 
 import Cookbook from '../cookbook/Cookbook'
-
+import Category from '../category/Category'
 
 import IconCookbook from 'assets/images/cookbook.png'
 import IconCookbookActive from 'assets/images/cookbook-active.png'
@@ -14,7 +14,7 @@ import IconMore from 'assets/images/more.png'
 import IconMoreActive from 'assets/images/more-active.png'
 const tablist = [
     { id: 'cookbook', icon: IconCookbook, iconActive: IconCookbookActive, title: '菜谱大全' ,comp:<Cookbook></Cookbook>},
-    { id: 'category', icon: Iconcategory, iconActive: IconcategoryActive, title: '分类' },
+    { id: 'category', icon: Iconcategory, iconActive: IconcategoryActive, title: '分类',comp:<Category></Category>},
     { id: 'more', icon: IconMore, iconActive: IconMoreActive, title: '更多' }
 ]
 export default class index extends Component {

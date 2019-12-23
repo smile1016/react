@@ -24,7 +24,8 @@ import ReactDOM from 'react-dom';
 // import App from './basic/12-context/Parent'
 // import App from './basic/12-context/02/Counter'
 // import App from './basic/13-hoc/Home'
-import App from './basic/Homework/List'
+// import App from './basic/Homework/List'
+import App from './adv/01-router/index'
 
 
 

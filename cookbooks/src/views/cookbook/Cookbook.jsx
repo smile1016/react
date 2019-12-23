@@ -10,27 +10,52 @@ export default class Cookbook extends Component {
     constructor(){
         super();
         this.state = {
-            data: []
+            swiperData: [],
+            hotcateData:[],
+            listData:[]
           }
     }
     render() {
         return (
             <div>
                 <Headerbar>菜谱大全</Headerbar>
-               <Swiper list = {this.state.data}></Swiper>
+               <Swiper list = {this.state.swiperData}></Swiper>
                 {/* hasborder,bgcolor,placeholder都是动态传值 */}
                 <Search hasborder={true} bgcolor='#f8f3fa' placeholder="想吃什么搜这里，如：川菜"></Search>
-                <HotCate></HotCate>
-                <Top10></Top10>
+                <HotCate list={this.state.hotcateData}></HotCate>
+                <Top10 list={this.state.listData}></Top10>
             </div>
         )
     }
+    // 从后台获取swiper
+    async getSwiper(){
+        let rs = await get('/api/swiper');
+        this.setState({
+            swiperData:rs.data.data
+        })
+        // console.log(this.state.swiperData)
+    }
+    // 从后台获取热门分类
+    async getHotCate(){
+        let rs = await get('/api/hotcate');
+        this.setState({
+            hotcateData:rs.data.list
+        })
+        // console.log(this.state.hotcateData)
+    }
+    // 从后台获取top10列表 
+    async getList(){
+        let rs = await get('/api/list');
+        // console.log(rs)
+        this.setState({
+            listData:rs.data.data
+        })
+        // console.log(this.state.listData)
+    }
     async componentDidMount(){
         //请求数据
-        let result =await get('/api/swiper')
-        this.setState({
-            data:result.data.data
-        })
-        console.log(result)
+        this.getSwiper();
+        this.getHotCate();
+        this.getList();
     }
 }

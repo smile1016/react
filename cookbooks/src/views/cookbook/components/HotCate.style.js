@@ -4,7 +4,7 @@ background:#fff;
 h2{
     line-height:0.94rem;
     font-size:0.3rem;
-    font-wight:400;
+    font-weight:400;
     color:#909090;
     padding-left:0.23rem;
 }

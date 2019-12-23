@@ -6,16 +6,16 @@ export default class Grid extends Component {
     }
     render() {
         return (
-            <GridContainer>
+            <GridContainer column={4}>
                 <ul>
                     {
-                        this.state.list.map((item,index)=>{
+                        this.props.list.map((item,index)=>{
                             return (
-                                <li key={index}><img src="" alt=""/> <span>item</span></li>
+                                <li key={index}><img src={item.img} alt=""/> <span>{item.title}</span></li>
                             )
                         })
                     }
-                   
+                   <li>更多</li>
                 </ul>
             </GridContainer>
         )
