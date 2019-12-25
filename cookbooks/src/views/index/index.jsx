@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { TabBar } from 'antd-mobile';
 import 'assets/style/reset.css'
 import 'antd-mobile/dist/antd-mobile.css';
-
+import connect from './redux/connect'
 import Cookbook from '../cookbook/Cookbook'
 import Category from '../category/Category'
 import Map from '../map/Map'
@@ -24,7 +24,7 @@ const tablist = [
     { id: 'category', icon: Iconcategory, iconActive: IconcategoryActive, title: '分类',comp:<Category></Category>},
     { id: 'more', icon: IconMore, iconActive: IconMoreActive, title: '更多' ,comp:<More></More>}
 ]
-export default class index extends Component {
+class index extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -86,3 +86,4 @@ export default class index extends Component {
         );
     }
 }
+export default connect(index)
