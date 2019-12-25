@@ -1,4 +1,4 @@
-import React ,{createContext} from 'react'
+import React ,{createContext,Component} from 'react'
 const {Provider,Consumer:MapConsumer}=createContext()
 class MapProvider extends Component{
     constructor(){
@@ -9,7 +9,7 @@ class MapProvider extends Component{
     }
     changeStatus=()=>{
         this.setState({
-            showMap:this.state.showMap
+            showMap:!this.state.showMap
         })
     }
     render(){
@@ -26,5 +26,6 @@ class MapProvider extends Component{
     }
 }
 export{
+    MapProvider,
     MapConsumer
 }

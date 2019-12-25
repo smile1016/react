@@ -2,10 +2,11 @@ import React from 'react';
 import Index from './views/index'
 import Category from './views/category/Category'
 import {BrowserRouter as Router,Switch, Route,Redirect} from 'react-router-dom'
+import {MapProvider} from './context/MapContext'
 
 function App() {
   return (
-    <div className="App">
+    <MapProvider>
       <Router>
         <Switch>
         <Route path='/index' component={Index}></Route>
@@ -18,7 +19,7 @@ function App() {
         
       </Router>
       
-    </div>
+      </MapProvider>
   );
 }
 

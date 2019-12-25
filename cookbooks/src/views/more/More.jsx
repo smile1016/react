@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {Switch } from 'antd-mobile';
+import {MapConsumer} from '../../context/MapContext'
 export default class More extends Component {
     state={
         showMap:true
@@ -11,12 +12,21 @@ export default class More extends Component {
     }
     render() {
         return (
-            <div>
-              more
-              <Switch checked={this.state.showMap} onChange={this.handleChange}>
-                
-              </Switch>
-            </div>
+            <MapConsumer>
+                {
+                    ({showMap,changeStatus})=>{
+                        return (
+                            <div>
+                            more
+                            <Switch checked={showMap} onChange={changeStatus}>
+                              
+                            </Switch>
+                          </div>
+                        )
+                    }
+                }
+            </MapConsumer>
+           
         )
     }
 }
