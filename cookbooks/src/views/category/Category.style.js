@@ -1,5 +1,7 @@
 import styled from 'styled-components';
-
+const CategoryContainer = styled.div`
+  height:100%;
+`
 const HeaderTab = styled.div`
   height:100%;
   display:flex;
@@ -49,5 +51,5 @@ const HeaderTab = styled.div`
 `
 
 export {
-  HeaderTab
+  HeaderTab,CategoryContainer
 }

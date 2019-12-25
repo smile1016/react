@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <span id="txt"></span>
+    <button onclick="store.dispatch({type:'increment'})">increment</button>
+    <script>
+        // 只读，不建议修改
+        const countState = {
+            
+            count: 1
+        }
+        const createStore = (reducer) => {
+            let state = null;
+            const listeners = []
+            // 只要事件派发，修改状态，订阅
+            const dispatch = (action) => {
+                state = reducer(action, state)
+                listeners.forEach((listener) => {
+                    listener()
+                })
+            }
+            const getState = () => {
+                return state
+            }
+            // 订阅
+            const subscribe = (listener) => {
+                listeners.push(listener)
+            }
+            dispatch()
+            return {
+                dispatch,
+                getState,
+                subscribe
+            }
+        }
+
+        const changeState = (action, state) => {
+            // 纯函数
+            if (!action) {
+                return countState
+            }
+            switch (action.type) {
+                case "increment":
+                    return {
+                        count: countState.count + 1
+                    }
+                    break;
+            }
+        }
+        const store = createStore(changeState)
+
+        // 渲染数据
+        const render = () => {
+            let txt = document.getElementById('txt')
+            txt.innerHTML = store.getState().count;
+
+        }
+
+        // 只负责修改数据 （reducer）
+        
+
+        render();
+        store.subscribe(render)
+    </script>
+</body>
+
+</html>

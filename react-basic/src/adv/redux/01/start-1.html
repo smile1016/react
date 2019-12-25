@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <span id="txt"></span>
+    <button onclick="dispatch({type:'increment'})">increment</button>
+    <script>
+        const countState={
+            count:1
+        }
+        // 渲染数据
+        const render=()=>{
+            console.log(countState.count)
+            let txt = document.getElementById('txt')
+            txt.innerHTML=countState.count;
+           
+        }
+        // 只负责修改数据 （reducer）
+        const changeState=(action)=>{
+            switch(action.type){
+                case"increment":
+                    countState.count+=1;
+                    break;
+            }
+        }
+        const dispatch=(action)=>{
+            //改变数据
+            changeState(action)
+            // 渲染
+            render();
+        }
+        render();
+    </script>
+</body>
+</html>

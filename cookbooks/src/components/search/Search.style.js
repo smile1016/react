@@ -30,6 +30,7 @@ input{
 }
 `
 const borderContainer = Border1px({
-    Comp:InputContainer
+    Comp:InputContainer,
+    radius:0.1
 })
 export {borderContainer,SearchContainer,InputContainer}

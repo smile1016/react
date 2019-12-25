@@ -25,9 +25,11 @@ import ReactDOM from 'react-dom';
 // import App from './basic/12-context/02/Counter'
 // import App from './basic/13-hoc/Home'
 // import App from './basic/Homework/List'
-import App from './adv/01-router/index'
-
-
+// import App from './adv/01-router/index'
+// import App from './adv/05/index'
+import App from './adv/redux/04/Todolist'
+import {Provider} from 'react-redux'
+import store from '../src/adv/redux/04/redux/store'
 
 // const App=(props)=>{
 // return (<h1>helpp-{props.name}</h1>)
@@ -38,7 +40,10 @@ import App from './adv/01-router/index'
 // }
 // var h1 = <h1>xixi</h1>
 ReactDOM.render(
-<App></App>,
+    <Provider store={store}>
+        <App></App>
+    </Provider>
+,
  document.getElementById('root'));
 // ReactDOM.render(h1, document.getElementById('root'));
 

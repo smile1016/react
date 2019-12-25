@@ -1,16 +1,21 @@
 
 import styled from 'styled-components';
 
-const Border1px = ({ Comp, bordercolor = '#B28969', radius = 0.1 }) => {
+const Border1px = ({ Comp, bordercolor = '#B28969', radius = 0,borderwidth='1px' }) => {
   return styled(Comp)`
     position:relative;
     &::before{
       pointer-events:none;
       position:absolute;
+      transform-origin:0 0;
+      left:0;
+      top:0;
       content:"";
       width:100%;
       height:100%;
-      border:solid 1px ${bordercolor};
+      border-style:solid;
+      border-width:${borderwidth};
+      border-color: ${bordercolor};
 
       @media (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5) {
         width:150%;
