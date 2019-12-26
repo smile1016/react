@@ -13,14 +13,14 @@ export default class Parent extends Component {
         return (
             <div>
                 {/* value设置想要传递的值 */}
-                <CoommonContext.Provider>
+                {/* <CoommonContext.Provider> */}
                     <MyContext.Provider value={{ ...this.state }}>
 
                         <Child></Child>
                     </MyContext.Provider>
-                </CoommonContext.Provider>
+                {/* </CoommonContext.Provider> */}
 
-
+                
             </div>
         )
     }

@@ -21,15 +21,15 @@ import ReactDOM from 'react-dom';
 // import App from './basic/10-form/Product'
 // import App from './basic/11-lifecycle/Clock'
 // import App from './basic/11-lifecycle/Parent'
-// import App from './basic/12-context/Parent'
+// import App from './basic/12-context/my/Parent'
 // import App from './basic/12-context/02/Counter'
 // import App from './basic/13-hoc/Home'
 // import App from './basic/Homework/List'
 // import App from './adv/01-router/index'
 // import App from './adv/05/index'
-import App from './adv/redux/04/Todolist'
+import App from './adv/redux/mytodolist/Todolist'
 import {Provider} from 'react-redux'
-import store from '../src/adv/redux/04/redux/store'
+import store from '../src/adv/redux/mytodolist/redux/store'
 
 // const App=(props)=>{
 // return (<h1>helpp-{props.name}</h1>)
