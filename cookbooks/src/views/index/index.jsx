@@ -7,7 +7,7 @@ import Cookbook from '../cookbook/Cookbook'
 import Category from '../category/Category'
 import Map from '../map/Map'
 import More from '../more/More'
-import { MapConsumer } from '../../context/MapContext'
+import { MapConsumer } from '../../context/mapContext'
 
 import IconCookbook from 'assets/images/cookbook.png'
 import IconCookbookActive from 'assets/images/cookbook-active.png'

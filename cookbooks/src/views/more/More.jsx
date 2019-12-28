@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {Switch } from 'antd-mobile';
-import {MapConsumer} from '../../context/MapContext'
+import {MapConsumer} from '../../context/mapContext'
 export default class More extends Component {
     state={
         showMap:true

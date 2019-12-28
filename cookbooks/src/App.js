@@ -2,7 +2,7 @@ import React from 'react';
 import Index from './views/index'
 import Category from './views/category/Category'
 import {BrowserRouter as Router,Switch, Route,Redirect} from 'react-router-dom'
-import {MapProvider} from './context/MapContext'
+import {MapProvider} from './context/mapContext'
 
 function App() {
   return (
